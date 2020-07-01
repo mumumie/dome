@@ -86,7 +86,14 @@ export const constantRoutes = [
   {
     path: '/',
     component: () => import('@/views_home/home/index'),
-    hidden: true
+    hidden: true,
+    meta: { title: '产品首页', icon: 'user', noCache: true}
+  },
+  {
+    path: '/product-list',
+    component: () => import('@/views_home/product-list/index'),
+    hidden: true,
+    meta: { title: '产品列表', icon: 'user', noCache: true}
   },
   {
     path: '/documentation',

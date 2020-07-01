@@ -1,7 +1,7 @@
 <template>
   <div class="header-box">
     <div class="header-content">
-      <div class="logo">哔哩哔哩</div>
+      <div class="logo">{{ title }}</div>
       <div class="login">
         <el-button type="text">登录</el-button>
         <el-button type="text">免费注册</el-button>
@@ -12,7 +12,13 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 

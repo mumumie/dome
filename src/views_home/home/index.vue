@@ -1,12 +1,15 @@
 <template>
   <div class="container">
     <Header />
-    <el-carousel :interval="5000" class="carousel-box">
-      <el-carousel-item v-for="(item, index) in imgList" :key="index">
-        <img :src="item" alt="">
-      </el-carousel-item>
-    </el-carousel>
-    <div class="main" />
+    <Banner />
+    <nav-bar />
+    <div class="main">
+      <el-carousel :interval="5000" class="carousel-box">
+        <el-carousel-item v-for="(item, index) in imgList" :key="index">
+          <img :src="item" alt="">
+        </el-carousel-item>
+      </el-carousel>
+    </div>
 
   </div>
 </template>
@@ -18,7 +21,9 @@ import img3 from '@/assets/images/3.jpg'
 export default {
   name: 'Home',
   components: {
-    Header: () => import('./Header')
+    Header: () => import('./Header'),
+    Banner: () => import('./Banner'),
+    navBar: () => import('./navBar'),
   },
   data() {
     return {
@@ -26,7 +31,7 @@ export default {
     }
   },
   created() {
-    this.getInfo()
+    // this.getInfo()
   },
   methods: {
     getInfo() {
@@ -44,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-  .main{width:1200px;margin:0 auto;}
+  .main{width:1200px;margin:20px auto;}
   .carousel-box /deep/ .el-carousel__container{height:400px;}
   .carousel-box .el-carousel__item img{
     width:100%;
